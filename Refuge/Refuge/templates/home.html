@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% placeholder "feature" %}
+        {% placeholder "main" %}
+        {% placeholder "Image" %}
+
+        <footer>
+       {% static_placeholder 'footer' %}
+     </footer>
+    </body>
+</html>
