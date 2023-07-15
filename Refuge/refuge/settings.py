@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # optional, but used in most projects
     'djangocms_admin_style',
-
+    'refuge',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -102,12 +102,12 @@ MIDDLEWARE = [
     'cms.middleware.language.LanguageCookieMiddleware',
 ]
 
-ROOT_URLCONF = 'Refuge.urls'
+ROOT_URLCONF = 'refuge.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Refuge/templates'],
+        'DIRS': ['refuge/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,7 +123,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Refuge.wsgi.application'
+WSGI_APPLICATION = 'refuge.wsgi.application'
 
 
 # Database
@@ -159,10 +159,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('fr', 'Français'),
+    ('en', 'English')
 ]
 
 TIME_ZONE = 'UTC'
@@ -178,6 +179,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -191,7 +194,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 CMS_TEMPLATES = [
     ('home.html', 'Home page template'),
     ('base.html', 'Base template'),
-    ('bootstrap5.html', 'bootstrap template')
+    ('bootstrap5.html', 'bootstrap template'),
 ]
 
 MEDIA_URL = "/media/"
@@ -205,20 +208,3 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
-
-# <!--{% load cms_tags sekizai_tags %}-->
-# <!--<html>-->
-# <!--    <head>-->
-# <!--        <title>{% block title %}{% page_attribute "page_title" %}{% endblock %}</title>-->
-# <!--        {% render_block "css" %}-->
-# <!--        {% block base_css %}{% endblock %}-->
-# <!--    </head>-->
-# <!--    <body>-->
-# <!--    {% cms_toolbar %}-->
-# <!--    {% block navbar %}{% endblock %}-->
-# <!--    {% block main %}-->
-# <!--    {% placeholder "main" %}-->
-# <!--    {% endblock main %}-->
-# <!--    {% block base_js %}{% endblock %}-->
-# <!--    </body>-->
-# <!--</html>-->
