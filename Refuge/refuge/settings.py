@@ -208,3 +208,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+DJANGOCMS_STYLE_TAGS = ['div', 'article', 'section', 'header', 'footer',
+                        'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li']
