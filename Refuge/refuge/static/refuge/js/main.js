@@ -13,5 +13,8 @@
 			$this.find('> a').attr('aria-expanded', false);
 			$this.find('.dropdown-menu').removeClass('show');
 	});
+    window.scrollTo(0, 0);
+
 
 })(jQuery);
+

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # optional, but used in most projects
     'djangocms_admin_style',
     'refuge',
+    'contact',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -192,9 +193,10 @@ SITE_ID = 1
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CMS_TEMPLATES = [
-    ('home.html', 'Home page template'),
+    ('gallery.html', 'Gallery Design'),
     ('base.html', 'Base template'),
-    ('bootstrap5.html', 'bootstrap template'),
+    ('main.html', 'Main Page'),
+    ('article.html', 'Text page'),
 ]
 
 MEDIA_URL = "/media/"
@@ -211,3 +213,21 @@ THUMBNAIL_PROCESSORS = (
 
 DJANGOCMS_STYLE_TAGS = ['div', 'article', 'section', 'header', 'footer',
                         'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li']
+
+DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser']
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 9000
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True  #env("EMAIL_USE_TLS")
+# EMAIL_PORT = 9000
+# EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")

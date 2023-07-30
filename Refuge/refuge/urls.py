@@ -19,8 +19,11 @@ from django.conf.urls.static import static
 from django.urls import path
 from django.urls import re_path, include
 
+from contact.views import nav
+
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include('cms.urls')),
+    # re_path(r'^contact/', include('contact.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

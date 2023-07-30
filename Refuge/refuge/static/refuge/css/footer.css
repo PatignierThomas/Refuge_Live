@@ -6,25 +6,25 @@
   font-size: 0.9rem;
 }
 
-a {
+footer a {
   color: inherit;
   text-decoration: none;
   transition: all 0.3s;
 }
 
-a:hover, a:focus {
+footer a:hover, a:focus {
   text-decoration: none;
 }
 
-.form-control {
+footer  .form-control {
   background: #212529;
   border-color: #545454;
 }
 
-.form-control:focus {
+footer  .form-control:focus {
   background: #212529;
 }
 
 footer {
-  background: #212529;
+  background: #212529 !important;
 }

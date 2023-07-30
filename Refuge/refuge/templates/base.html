@@ -17,14 +17,20 @@
                 <title>{% block title %}{% page_attribute "page_title" %}{% endblock %}</title>
             {% block base_css %}
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+                <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
             {% endblock %}
             {% block nav_css %}
-                <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+                <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,600,400italic' rel='stylesheet' type='text/css'>
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-                <link rel="stylesheet" href="{% static 'Refuge/css/header.css' %}">
+                <link rel="stylesheet" href="{% static 'refuge/css/header.css' %}">
+            {% endblock %}
+                <link rel="stylesheet" href="{% static 'refuge/css/modal.css' %}">
+            {% block main_css %}
+            {% endblock %}
+            {% block article %}
             {% endblock %}
             {% block footer %}
-                <link rel="stylesheet" href="{% static 'Refuge/css/footer.css' %}">
+                <link rel="stylesheet" href="{% static 'refuge/css/footer.css' %}">
             {% endblock %}
 {% endspaceless %}{% render_block 'css' %}{% spaceless %}
     {% block page_head %}{% endblock %}
@@ -36,9 +42,10 @@
         {% placeholder "Content" %}
         {% placeholder "main" %}
     {% endblock content %}
-    {% include 'footer.html' %}
+    {% static_placeholder "footer" %}
+    <div id="myModal" class="modal"></div>
     {% block base_js %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <script src="{% static 'refuge/js/modal.js' %}"></script>
     {% endblock %}
 {% endspaceless %}{% render_block 'js' %}{% spaceless %}
 
@@ -48,6 +55,8 @@
         <script src="{% static 'refuge/js/popper.js' %}"></script>
         <script src="{% static 'refuge/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'refuge/js/main.js' %}"></script>
+    {% endblock %}
+    {% block main_js %}
     {% endblock %}
     {% block bottom_css %}{% endblock %}
     </body>

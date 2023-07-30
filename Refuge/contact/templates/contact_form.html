@@ -1,0 +1,36 @@
+{% load static cms_tags menu_tags sekizai_tags  i18n %}
+<div id="free-quote" class="free-quote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="col-lg-8 offset-lg-2  wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+              <form id="contact" action="" method="post">
+                {% csrf_token %}
+                <h3>Une Question ?</h3>
+                <h4>Nous Contacter</h4>
+                <fieldset>
+                  <input placeholder="Votre nom" type="text" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                  <input placeholder="Votre e-mail" type="email" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                  <input placeholder="Sujet" type="text" tabindex="3" required>
+                </fieldset>
+                <fieldset>
+                  <textarea placeholder="Taper votre message ici..." tabindex="5" required></textarea>
+                </fieldset>
+                <fieldset>
+                  <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
+
+<!--<h1>Hello {% if request.user.is_authenticated %}-->
+<!--  {{ request.user.first_name }} {{ request.user.last_name}}-->
+<!--{% else %}-->
+<!--  {{ instance.guest_name }}-->
+<!--{% endif %}</h1>-->

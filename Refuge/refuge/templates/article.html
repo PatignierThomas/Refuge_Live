@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static cms_tags sekizai_tags %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% block article %}
+            <link rel="stylesheet" href="{% static 'assets/css/templatemo-digimedia-v3.css' %}">
+            <link rel="stylesheet" href="{% static 'refuge/css/modal.css' %}">
+        {% endblock article %}
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% block content %}
+            <div class="container">
+                <div class="row align-text-center">
+                    <div class="col-lg-8 pt-5">
+                        <div class="article">
+                            {% placeholder "main" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock content %}
+    </body>
+</html>
